@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Agendada</title>
+    <style>
+        body {
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 32px 24px;
+        }
+        h1 {
+            color: #2d3436;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-family: 'Epilogue', Arial, sans-serif;
+        }
+        .details {
+            font-size: 16px;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+            color: #219150;
+        }
+        @media (max-width: 620px) {
+            .container {
+                padding: 16px 8px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Consulta Agendada</h1>
+    <div class="details">
+        <p>Olá <strong>#{pacient}</strong>,</p>
+        <p>
+            Esse e-mail é apenas para lhe informar que a sua consulta no dia <strong>#{date}</strong>, com o Dr(a) <strong>#{doctor}</strong> em nosso consultório foi <strong>#{type}</strong> com sucesso.
+            </br></br>
+            Caso deseje reagendar a consulta entre em contato pelo nosso whatsapp (11) 9999-5555.
+        </p>
+    </div>
+    <div class="footer">
+        Atenciosamente,<br>
+        Equipe da Clínica
+    </div>
+</div>
+</body>
+</html>

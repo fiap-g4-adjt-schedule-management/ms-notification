@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: ms-notification
+
+  rabbitmq:
+    addresses: ${RABBIT_HOST}
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USER}
+    password: ${RABBIT_PASSWORD}
+
+  mail:
+    host: ${EMAIL_HOST}
+    port: ${EMAIL_PORT}
+    username: ${EMAIL_USER}
+    password: ${EMAIL_PASS}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8081
