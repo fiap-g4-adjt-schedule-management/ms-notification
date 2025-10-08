@@ -1,6 +1,7 @@
 package br.com.fiap.msnotification.mapper;
 
 import br.com.fiap.msnotification.core.domain.EmailDomain;
+import br.com.fiap.msnotification.core.domain.ScheduleType;
 import br.com.fiap.msnotification.dto.NotificationDTO;
 import lombok.experimental.UtilityClass;
 
@@ -13,7 +14,7 @@ public class EmailMapper {
                 notificationDTO.pacientName(),
                 notificationDTO.doctorName(),
                 notificationDTO.date(),
-                notificationDTO.type(),
+                ScheduleType.valueOf(notificationDTO.type()),
                 notificationDTO.clientEmail(),
                 notificationDTO.clientPhone()
         );

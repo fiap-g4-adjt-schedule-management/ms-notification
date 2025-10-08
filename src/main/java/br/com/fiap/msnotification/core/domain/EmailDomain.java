@@ -12,11 +12,11 @@ public class EmailDomain {
     private String pacientName;
     private String doctorName;
     private LocalDateTime date;
-    private String type;
+    private ScheduleType type;
     private String clientEmail;
     private String clientPhone;
 
-    private EmailDomain(String title, String pacientName, String doctorName, LocalDateTime date, String type, String clientEmail, String clientPhone) {
+    private EmailDomain(String title, String pacientName, String doctorName, LocalDateTime date, ScheduleType type, String clientEmail, String clientPhone) {
         this.title = title;
         this.pacientName = pacientName;
         this.doctorName = doctorName;
@@ -26,7 +26,7 @@ public class EmailDomain {
         this.clientPhone = clientPhone;
     }
 
-    public static EmailDomain create(String title, String pacientName, String doctorName, LocalDateTime date, String type, String clientEmail, String clientPhone) {
+    public static EmailDomain create(String title, String pacientName, String doctorName, LocalDateTime date, ScheduleType type, String clientEmail, String clientPhone) {
         return new EmailDomain(title, pacientName, doctorName, date, type, clientEmail, clientPhone);
     }
 
