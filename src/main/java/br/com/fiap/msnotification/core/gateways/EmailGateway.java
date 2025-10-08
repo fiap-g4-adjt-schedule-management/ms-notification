@@ -3,6 +3,8 @@ package br.com.fiap.msnotification.core.gateways;
 import br.com.fiap.msnotification.core.domain.EmailDomain;
 import br.com.fiap.msnotification.core.interfaces.DataSource;
 
+import java.io.IOException;
+
 public class EmailGateway implements IEmailGateway {
 
     private final DataSource dataSource;
@@ -12,12 +14,8 @@ public class EmailGateway implements IEmailGateway {
     }
 
     @Override
-    public String createTemplate() {
-       try{
+    public String createTemplate() throws IOException {
            return this.dataSource.changeTemplate();
-       } catch (Exception e) {
-           throw new RuntimeException("Erro ao criar template: " + e.getMessage());
-       }
     }
 
     @Override
