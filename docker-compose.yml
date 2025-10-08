@@ -1,0 +1,18 @@
+version: "3.9"
+
+networks:
+  tech-net:
+    external: true
+
+services:
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ms-notification
+    ports:
+      - "8081:8081"
+    env_file:
+      - .env
+    networks:
+      - tech-net
