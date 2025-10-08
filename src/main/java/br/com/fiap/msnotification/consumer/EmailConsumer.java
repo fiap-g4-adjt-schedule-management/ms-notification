@@ -27,11 +27,11 @@ public class EmailConsumer {
     public void listenEmailQueue(@Payload NotificationDTO notificationDTO, Message message, Channel channel) {
         try {
             EmailController emailController = EmailController.create(emailDataSourceImpl);
+            log.info("Enviando notificação por e-mail: {}", notificationDTO);
             emailController.sendEmail(EmailMapper.toDomain(notificationDTO));
-            log.info("Receiving email notification: {}", notificationDTO);
             channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
         } catch (Exception e) {
-            log.error("Error while receiving email notification: " + e.getMessage(), e);
+            log.error("Erro ao tentar enviar notificação por e-mail: " + e.getMessage(), e);
         }
     }
 }

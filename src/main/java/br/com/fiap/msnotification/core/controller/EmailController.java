@@ -1,13 +1,17 @@
 package br.com.fiap.msnotification.core.controller;
 
+import br.com.fiap.msnotification.consumer.EmailConsumer;
 import br.com.fiap.msnotification.core.domain.EmailDomain;
 import br.com.fiap.msnotification.core.gateways.EmailGateway;
 import br.com.fiap.msnotification.core.gateways.IEmailGateway;
 import br.com.fiap.msnotification.core.interfaces.DataSource;
 import br.com.fiap.msnotification.core.usecase.SendNotificationUseCase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class EmailController {
 
+    private final Logger log = LoggerFactory.getLogger(EmailConsumer.class);
     private final DataSource dataSource;
 
     private EmailController(DataSource dataSource) {
@@ -23,6 +27,6 @@ public class EmailController {
         SendNotificationUseCase sendNotificationUseCase = new SendNotificationUseCase(emailGateway);
 
         sendNotificationUseCase.run(email);
-        System.out.println("Email enviado com sucesso!");
+        log.info("Email enviado com sucesso!");
     }
 }
